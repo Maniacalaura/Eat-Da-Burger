@@ -1,0 +1,40 @@
+<h1>***To be replaced with image***</h1>
+<h2>Eat-da-burger!</h2>
+
+<ul>
+    {{#each burgers}}
+        {{#unless this.devoured}}
+        <li>
+           {{this.name}}
+           <form action="api/burgers/:id" method="PUT">
+            <input type="hidden" name="devoured" value="false">
+            <button type="submit">Devour!</button>
+           </form>
+        </li>
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Burgers Devoured</h2>
+
+<ul>
+    {{#each burgers}}
+        {{#if this.devoured}} 
+        <li>
+            {{this.name}}
+            <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="devoured" value="true">
+            </form>
+        </li>
+        {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Suggest a NEW Burger!</h2>
+<form class="create-form">
+    <div class="form-group">
+    <label for="burg">Punny Burger Name:</label>
+    <input type="text" id="burg" name="name">
+  </div>
+  <button type="submit">Suggest!</button>
+</form>

@@ -1,0 +1,10 @@
+INSERT INTO burgers (burger_name, devoured) VALUES ("The Cauliflower's Cumin From Inside the House Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Gourdon-Hamsey Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("The Silentil Night Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Poblano Picasso Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Beets of Burden Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Plymouth Roquefort Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Chile Relleno-You-Didn't Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Curd-fect Strangers Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Don't You Four Cheddar 'Bout Me Burger", FALSE);
+INSERT INTO burgers (burger_name, devoured) VALUES ("Baby You Can Chive My Car Burger", FALSE);
