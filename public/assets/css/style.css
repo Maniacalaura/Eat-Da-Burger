@@ -1,0 +1,21 @@
+img {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+}
+
+#eat {
+    text-align: center;
+}
+
+#menu {
+    text-align: center;
+}
+
+#devoured {
+    text-align: center;
+}
+
+#suggest {
+    text-align: center;
+}
