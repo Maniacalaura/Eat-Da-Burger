@@ -48,8 +48,8 @@ var orm = {
         });
     },
     
-    update: function(table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table + " SET " + objSql(objColVals) 
+    update: function(table, vals, condition, cb) {
+        var queryString = "UPDATE " + table + " SET " + objSql(vals) 
         + " WHERE " + condition;
         
         // console.log(queryString);

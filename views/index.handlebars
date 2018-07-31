@@ -2,55 +2,66 @@
     <div class="row">
         <div class="col-12" id="bob">
             <img src="../assets/img/Bobs_burger.jpg" height="250" width="300">
-                <h2 id="eat">Eat-da-burger!</h2>
+                <h1 id="eat">Eat-da-burger!</h1>
         </div>
     </div>
 </div>
-
 <div class="container">
     <div class="row">
         <div class="col-6">
-            <h2 id="menu">Menu</h2>
-            <ul>
-            {{#each burgers}}
-                {{#unless this.devoured}}
-                <li>
-                {{this.burger_name}}
-                <form class="devour">
-                <input type="hidden" id="input" name="devoured" value={{this.id}}>
-                <button type="submit">Devour!</button>
-                </form>
-            </li>
-                {{/unless}}
-            {{/each}}
-            </ul>
+            <div class="card">
+                <div class="card-body">
+                    <h2 id="menu">Menu</h2>
+                    <ul>
+                    {{#each burgers}}
+                        {{#unless this.devoured}}
+                        <li>
+                        {{this.burger_name}}
+                        <form class="devour">
+                        <input type="hidden" id="input" name="devoured" value={{this.id}}>
+                        <button type="submit">Devour!</button>
+                        </form>
+                    </li>
+                        {{/unless}}
+                    {{/each}}
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="col-6">
-            <h2 id="devoured">Burgers Devoured</h2>
-            <ul>
-            {{#each burgers}}
-                {{#if this.devoured}} 
-                <li>
-                    {{this.burger_name}}
-                </li>
-                {{/if}}
-            {{/each}}
-            </ul>
+            <div class="card">
+                <div class="card-body">
+                    <h2 id="devoured">Burgers Devoured</h2>
+                    <ul>
+                    {{#each burgers}}
+                        {{#if this.devoured}} 
+                        <li>
+                            {{this.burger_name}}
+                        </li>
+                        {{/if}}
+                    {{/each}}
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container" id="suggestions">
     <div class="row">
         <div class="col-12" id="suggest">
-            <h2>Suggest a NEW Burger!</h2>
-            <form class="create-burger">
-                <div class="form-group">
-                <label for="">Punny Burger Name:</label>
-                <input type="text" id="burg" name="name">
-                    <button type="submit" class="suggest">Suggest!</button>
+            <div class="card">
+                <div class="card-body">
+                    <h2>Suggest a NEW Burger!</h2>
+                    <form class="create-burger">
+                        <div class="form-group">
+                        <label for="">Punny Burger Name:</label>
+                        <input type="text" id="burg" name="name">
+                            <button type="submit" class="suggest">Suggest!</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>

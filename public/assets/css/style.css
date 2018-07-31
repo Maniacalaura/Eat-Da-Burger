@@ -4,7 +4,7 @@ img {
     display:block;
 }
 
-#eat {
+#bob {
     text-align: center;
 }
 
@@ -18,4 +18,15 @@ img {
 
 #suggest {
     text-align: center;
+}
+
+.card-body {
+    background-color: lightgreen;
+    padding: 10px;
+    box-shadow: 5px 5px 5px #888888;
+    box-shadow: black;
+}
+
+#suggestions {
+    margin-top: 20px;
 }
