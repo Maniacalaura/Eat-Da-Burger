@@ -10,7 +10,7 @@ function printData(num) {
     return arr.toString();
 }
 
-function objSql(obj) {
+function objSql(ob) {
     var arr = [];
 
     for (var key in ob) {

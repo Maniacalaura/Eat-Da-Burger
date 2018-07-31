@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12" id="bob">
-            <img src="../public/assets/img/Bobs_burger.jpg" height="250" width="300">
+            <img src="../assets/img/Bobs_burger.jpg" height="250" width="300">
                 <h2 id="eat">Eat-da-burger!</h2>
         </div>
     </div>
@@ -13,15 +13,15 @@
             <h2 id="menu">Menu</h2>
             <ul>
             {{#each burgers}}
-                {{#unless this.devoured}}
+                {{!-- {{#unless this.devoured}} --}}
                 <li>
-                {{this.name}}
-                <form action="/api/burgers/:id" method="PUT">
-                <input type="hidden" name="devoured" value="false">
+                {{this.burger_name}}
+                <form class="devour">
+                <input type="hidden" id="input" name="devoured" value={{this.id}}>
                 <button type="submit">Devour!</button>
                 </form>
             </li>
-                {{/unless}}
+                {{!-- {{/unless}} --}}
             {{/each}}
             </ul>
         </div>
@@ -31,10 +31,7 @@
             {{#each burgers}}
                 {{#if this.devoured}} 
                 <li>
-                    {{this.name}}
-                    <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
-                    <input type="hidden" name="devoured" value="true">
-                    </form>
+                    {{this.burger_name}}
                 </li>
                 {{/if}}
             {{/each}}
@@ -51,7 +48,7 @@
                 <div class="form-group">
                 <label for="burg">Punny Burger Name:</label>
                 <input type="text" id="burg" name="name">
-                    <button type="submit">Suggest!</button>
+                    <button type="submit" class="suggest">Suggest!</button>
                 </div>
             </form>
         </div>
