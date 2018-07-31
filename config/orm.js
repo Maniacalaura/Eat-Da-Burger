@@ -28,24 +28,16 @@ function objSql(ob) {
 var orm = {
     all: function(tableInput, cb) {
         var queryString = "SELECT * FROM " + tableInput + ";";
-        connection.query(queryString, function(err, result){
+            connection.query(queryString, function(err, result){
             if (err) {
                 throw err;
             }
             cb(result);
         });
     },
-    create: function(table, cols, vals, cb) {
-        var queryString = "INSERT INTO " + table;
-
-        queryString += " (";
-        queryString += cols.toString();
-        queryString += ") ";
-        queryString += "VALUES (";
-        queryString += printData(vals.length);
-        queryString += ") ";
-
-        console.log(queryString);
+    create: function(tableInput, cols, vals, cb) {
+        var queryString = "INSERT INTO " + tableInput + " (" + cols.toString() + ") " +
+        "VALUES (" + printData(vals.length) + ");";
     
         connection.query(queryString, vals, function(err, result) {
             if (err) {
@@ -57,16 +49,12 @@ var orm = {
     },
     
     update: function(table, objColVals, condition, cb) {
-        var queryString = "UPDATE " + table;
+        var queryString = "UPDATE " + table + " SET " + objSql(objColVals) 
+        + " WHERE " + condition;
+        
+        // console.log(queryString);
 
-        queryString += " SET ";
-        queryString += objSql(objColVals);
-        queryString += " WHERE ";
-        queryString += condition;
-
-        console.log(queryString);
-
-        connection.query(queryString, function(err, result) {
+        connection.query(queryString, vals, function(err, result) {
             if (err) {
                 throw err;
             }
