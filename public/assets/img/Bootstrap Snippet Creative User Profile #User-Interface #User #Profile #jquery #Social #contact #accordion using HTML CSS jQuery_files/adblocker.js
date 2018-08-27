@@ -1,0 +1,7 @@
+/**
+ * @file Criteo Integral Ad Science Blocking
+ * @description Implement IAS Brand Safety Blocking for Criteo
+ * @version v2.0.0
+ * @author Joe Pikowski
+ */
+ !function(){var t,e=document.getElementById("hidebannerlocation").getAttribute("intid1"),n=document.getElementById("hidebannerlocation").getAttribute("intid2"),i=document.getElementById("hidebannerlocation").getAttribute("intid3"),o=document.getElementById("hidebannerlocation").getAttribute("intid4"),r=["#cto_banner_content","body > div[id^=main]:first-child"];function c(t,e,n){var i=document.createElement("script");i.type="text/javascript",i.async=!0,i.src="//"+n+"/"+t+"/"+e+"/skeleton.js?";var o=document.getElementsByTagName("script")[0];o.parentNode.insertBefore(i,o)}function a(t,e){t.forEach(function(t){var n,i;n=t,i=e,document.querySelectorAll(n).forEach(function(t,e){t.style.visibility="hidden",t.parentNode.style.visibility="hidden",i&&(t.innerHTML="",t.parentNode.innerHTML="")})})}function d(t){t.forEach(function(t){var e;e=t,document.querySelectorAll(e).forEach(function(t,e){t.style.visibility="visible",t.parentNode.style.visibility="visible"})})}a(r,!1),function(){if("function"==typeof NodeList.prototype.forEach)return!1;NodeList.prototype.forEach=Array.prototype.forEach}(),window.__IntegralASConfig={onAPIResult:function(t){clearTimeout(window.__IntegralTimeout),"passed"===t.action?(d(r),i&&o&&c(i,o,"pixel.adsafeprotected.com/rjss/st")):a(r,!0)}},t=3e3,window.__IntegralTimeout=setTimeout(function(){d(r)},t),c(e,n,"fw.adsafeprotected.com/jsapi")}();
